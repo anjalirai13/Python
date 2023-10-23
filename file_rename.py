@@ -1,6 +1,6 @@
 import os
 
-folderPath = "C:\\Users\\422470\\PyCharmProjects\\BMRCL\\output\\IDC"
+folderPath = "C:\\Users\\PyCharmProjects\\output\\IDC"
 for mod in ["\\CBI", "\\SigRule", "\\SigRule-VDU", "\\TrackPlan", "\\Root", "", "\\Group"]:
     path = folderPath + mod
     filesList = [os.path.join(path, f) for f in os.listdir(path)]
@@ -12,8 +12,8 @@ for mod in ["\\CBI", "\\SigRule", "\\SigRule-VDU", "\\TrackPlan", "\\Root", "", 
             except FileNotFoundError:
                 pass
             os.rename(file, dest_path)
-        elif "_MYRD" in file:
-            dest_path = file.replace("_MYRD", "_111")
+        elif "_Location" in file:
+            dest_path = file.replace("_Location", "_temp")
             try:
                 os.remove(dest_path)
             except FileNotFoundError:
